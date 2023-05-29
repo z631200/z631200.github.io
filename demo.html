@@ -9,6 +9,7 @@
 
 <body>
     <div>
+        <!--Q1-->
         <p id="area1">
         <h2>count rate</h2>
         </p>
@@ -16,6 +17,7 @@
         <input id="TWD" type="text" placeholder="enter TWD" value="" />
         <br><br>
         <input id="btn" type="button" value="Submit" />
+        <!--Q4-->
         <input type="button" onclick="javascript:location.reload();" value="reset">
         <hr><br>
         USD:<p class="summary1">
@@ -39,6 +41,7 @@
 
         document.getElementById('btn').onclick = function () {
 
+            //Q5
             if (parseInt(document.getElementById('TWD').value) <= 0) {
                 alert('Wrong input!');
                 location.reload()
@@ -85,8 +88,6 @@
             AUD = AUD.toFixed(2);
             result5 = AUD;
             summary5.innerHTML = result5;
-
-
 
 
         }
