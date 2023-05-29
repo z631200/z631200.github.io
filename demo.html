@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>demo</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="mystyle.css">
+</head>
+
+<body>
+    <div>
+        <p id="area1">
+        <h2>count rate</h2>
+        </p>
+        <label>enter TWD</label>
+        <input id="TWD" type="text" placeholder="enter TWD" value="" />
+        <br><br>
+        <input id="btn" type="button" value="Submit" />
+        <input type="button" onclick="javascript:location.reload();" value="reset">
+        <hr><br>
+        USD:<p class="summary1">
+            </ul>
+        </p>
+        EUR:<p class="summary2">
+            </ul>
+        </p>
+        JPY:<p class="summary3">
+            </ul>
+        </p>
+        KRW:<p class="summary4">
+            </ul>
+        </p>
+        AUD:<p class="summary5">
+            </ul>
+        </p>
+
+    </div>
+    <script>
+
+        document.getElementById('btn').onclick = function () {
+
+            if (parseInt(document.getElementById('TWD').value) <= 0) {
+                alert('Wrong input!');
+                location.reload()
+            }
+            else if (isNaN(document.getElementById('TWD').value)) {
+                alert('Wrong input!');
+                location.reload()
+            }
+
+
+            var TWD = parseInt(document.getElementById('TWD').value);
+            var summary1 = document.querySelector('.summary1');
+            var result1 = '';
+
+            var USD = TWD / 30.95;
+            USD = USD.toFixed(2);
+            result1 = USD;
+            summary1.innerHTML = result1;
+
+            var summary2 = document.querySelector('.summary2');
+            var result2 = '';
+            var EUR = TWD / 33.44;
+            EUR = EUR.toFixed(2);
+            result2 = EUR;
+            summary2.innerHTML = result2;
+
+            var summary3 = document.querySelector('.summary3');
+            var result3 = '';
+            var JPY = TWD / .2218;
+            JPY = JPY.toFixed(2);
+            result3 = JPY;
+            summary3.innerHTML = result3;
+
+            var summary4 = document.querySelector('.summary4');
+            var result4 = '';
+            var KRW = TWD / .02533;
+            KRW = KRW.toFixed(2);
+            result4 = KRW;
+            summary4.innerHTML = result4;
+
+            var summary5 = document.querySelector('.summary5');
+            var result5 = '';
+            var AUD = TWD / 22.86;
+            AUD = AUD.toFixed(2);
+            result5 = AUD;
+            summary5.innerHTML = result5;
+
+
+
+
+        }
+    </script>
+</body>
+
+</html>
